@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
-export function Transactions() {
+
+export function Transactions() { 
+    const {transactions} = useContext(TransactionsContext)
+
     return (
         <div>
             <Header />
@@ -12,18 +17,14 @@ export function Transactions() {
                 <SearchForm />
                 <TransactionsTable>
                     <tbody>
-                        <tr>
-                            <td width="50%">Web development</td>
-                            <td><PriceHighlight variant="income">$ 12,000.00</PriceHighlight></td>
-                            <td>Venda</td>
-                            <td>13/04/2023</td>
+                        {transactions.map(el => {return(
+                            <tr key={el.id}>
+                            <td width="50%">{el.description}</td>
+                            <td><PriceHighlight variant={el.type}>$ {el.price}</PriceHighlight></td>
+                            <td>{el.category}</td>
+                            <td>{el.createdAt}</td>
                         </tr>
-                        <tr>
-                            <td width="50%">Hamburguer</td>
-                            <td><PriceHighlight variant="outcome">-$ 59.00</PriceHighlight></td>
-                            <td>Food</td>
-                            <td>13/04/2023</td>
-                        </tr>
+                        )})}
                     </tbody>
                 </TransactionsTable>
             </TransactionsContainer>
