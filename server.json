@@ -1,20 +1,28 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "type":"income",
-            "category":"Venda",
-            "price": 14000,
-            "createdAt": "2023-04-07T06:04:44.441Z"
-        },
-        {
-            "id": 2,
-            "description": "Burguer",
-            "type":"outcome",
-            "category":"Food",
-            "price": 4000,
-            "createdAt": "2023-04-07T06:04:44.441Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2023-04-07T06:04:44.441Z"
+    },
+    {
+      "id": 2,
+      "description": "Burguer",
+      "type": "outcome",
+      "category": "Food",
+      "price": 4000,
+      "createdAt": "2023-04-07T06:04:44.441Z"
+    },
+    {
+      "description": "ersf",
+      "price": 343,
+      "category": "fdsfs",
+      "type": "income",
+      "createdAt": "2023-04-11T23:21:17.623Z",
+      "id": 3
+    }
+  ]
 }
